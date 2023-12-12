@@ -7,8 +7,22 @@ html,
 body,
 #root, 
 .app {
-    height: 100%;
+    min-height: 100vh; /* Ensure that app is at least the height of the viewport */
+    display: flex;
+    flex-direction: column;
     width: 100%;
     font-family: "DM Sans", sans-serif;
     @apply text-gray-500;
 }
+
+.main-content {
+    padding-top: 100px; 
+    padding-left: 60px;
+    padding-right: 60px;
+    min-height: 100vh; /* Ensure that app is at least the height of the viewport */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-family: "DM Sans", sans-serif;
+    @apply text-gray-500;/* Replace [Navbar_Height] with the actual height of your navbar */
+  }

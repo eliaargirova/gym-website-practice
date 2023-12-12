@@ -5,7 +5,6 @@ import Link from "./Link";
 import { SelectedPage } from "@/shared/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import ActionButton from "@/shared/ActionButton";
-import AboutMe from "@/pages/AboutMe"
 import { useNavigate } from 'react-router-dom';
 
 type Props = {
@@ -19,6 +18,8 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const navbarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow";
+  const navigate = useNavigate();
+  
 
   return (
     <nav> 
@@ -34,29 +35,28 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
             {isAboveMediumScreens ? (
               <div className={`${flexBetween} w-full`}>
                 <div className={`${flexBetween} gap-8 text-sm`}>
-                  <Link
-                    page="Home"
-                    selectedPage={selectedPage}
-                    setSelectedPage={setSelectedPage}
-                  />
-                  <Link
-                    page="Benefits"
-                    selectedPage={selectedPage}
-                    setSelectedPage={setSelectedPage}
-                  />
-                  <Link
-                    page="Our Classes"
-                    selectedPage={selectedPage}
-                    setSelectedPage={setSelectedPage}
-                  />
-                  <Link
-                    page="Contact Us"
-                    selectedPage={selectedPage}
-                    setSelectedPage={setSelectedPage}
-                  />
+
+                  {/* HOME */}
+
+                  <button onClick={() => navigate("/")}>Home</button>
+ 
+                  {/* BENEFITS */}
+                  <button onClick={() => navigate("/benefits")}>Benefits</button>
+
+                  {/* CLASSES */}
+
+                  <button onClick={() => navigate("/classes")}>Classes</button>
+
+                  {/* CONTACT US*/}
+                  <button onClick={() => navigate("/contactme")}>Social Media</button>
                 </div>
+
+                {/* ABOUT ME */}
+
                 <div className={`${flexBetween} gap-8`}>
-                  <p>About me</p>
+                  <button onClick={() => navigate("/about-me")}>About me</button>
+
+                 {/* CONTACT ME */} 
                   <ActionButton setSelectedPage={setSelectedPage}>
                     Contact Me
                   </ActionButton>

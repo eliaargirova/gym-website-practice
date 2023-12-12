@@ -8,6 +8,9 @@ import SponsorForbes from "@/assets/SponsorForbes.png";
 import SponsorFortune from "@/assets/SponsorFortune.png";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion";
+import Benefits from "../benefits";
+import OurClasses from "../ourClasses";
+import ContactUs from "../contactUs";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -99,7 +102,21 @@ const Home = ({ setSelectedPage }: Props) => {
           </div>
         </div>
       )}
+
+      <section id="benefits">
+        <Benefits setSelectedPage={setSelectedPage} />
+      </section>    
+
+      <section id="ourclasses">
+        <OurClasses setSelectedPage={setSelectedPage} />
+      </section> 
+
+      <section id="contactus">
+        <ContactUs setSelectedPage={setSelectedPage} />
+      </section> 
+      
     </section>
+    
   );
 };
 
