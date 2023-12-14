@@ -38,23 +38,23 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
 
                   {/* HOME */}
 
-                  <button onClick={() => navigate("/")}>Home</button>
+                  <button className="text-xl" onClick={() => navigate("/")}>Home</button>
  
                   {/* BENEFITS */}
-                  <button onClick={() => navigate("/benefits")}>Benefits</button>
+                  <button className="text-xl" onClick={() => navigate("/benefits")}>Benefits</button>
 
                   {/* CLASSES */}
 
-                  <button onClick={() => navigate("/classes")}>Classes</button>
+                  <button className="text-xl" onClick={() => navigate("/classes")}>Classes</button>
 
                   {/* CONTACT US*/}
-                  <button onClick={() => navigate("/contactme")}>Social Media</button>
+                  <button className="text-xl"onClick={() => navigate("/contactme")}>Social Media</button>
                 </div>
 
                 {/* ABOUT ME */}
 
                 <div className={`${flexBetween} gap-8`}>
-                  <button onClick={() => navigate("/about-me")}>About me</button>
+                  <button className="text-xl" onClick={() => navigate("/about-me")}>About me</button>
 
                  {/* CONTACT ME */} 
                   <ActionButton setSelectedPage={setSelectedPage}>

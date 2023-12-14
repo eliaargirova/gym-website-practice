@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 import Benefits from "../benefits";
 import OurClasses from "../ourClasses";
 import ContactUs from "../contactUs";
+import ContactUsImage from "@/assets/image4.png";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -112,7 +113,7 @@ const Home = ({ setSelectedPage }: Props) => {
       </section> 
 
       <section id="contactus">
-        <ContactUs setSelectedPage={setSelectedPage} />
+        <ContactUs  imageSrc={ContactUsImage}/>
       </section> 
       
     </section>

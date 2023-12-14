@@ -3,12 +3,13 @@ import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
 import ContactUsPageGraphic from "@/assets/ContactUsPageGraphic.png";
 import HText from "@/shared/HText";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 type Props = {
-  setSelectedPage: (value: SelectedPage) => void;
+  imageSrc: string; 
 };
 
-const ContactUs = ({ setSelectedPage }: Props) => {
+const ContactUs = ({ imageSrc }: Props) => {
   const inputStyles = `mb-5 w-full rounded-lg bg-primary-300
   px-5 py-3 placeholder-white`;
 
@@ -25,22 +26,16 @@ const ContactUs = ({ setSelectedPage }: Props) => {
     }
   };
 
+  const isAboveMediumScreens = useMediaQuery("(min-width:1060px)");
+
   return (
-    <section id="contactus" className="mx-auto w-5/6 pt-24 pb-32">
-      <motion.div
-        onViewportEnter={() => setSelectedPage(SelectedPage.ContactUs)}
+    <section id="contactus" className="mx-auto w-5/6 pt-10 pb-32">
+      <div
+
       >
         {/* HEADER */}
-        <motion.div
+        <div
           className="md:w-3/5"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.5 }}
-          variants={{
-            hidden: { opacity: 0, x: -50 },
-            visible: { opacity: 1, x: 0 },
-          }}
         >
           <HText>
             <span className="text-primary-500">JOIN NOW</span> TO GET IN SHAPE
@@ -50,20 +45,12 @@ const ContactUs = ({ setSelectedPage }: Props) => {
             sapien vel rhoncus. Placerat at in enim pellentesque. Nulla
             adipiscing leo egestas nisi elit risus sit. Nunc cursus sagittis.
           </p>
-        </motion.div>
+        </div>
 
         {/* FORM AND IMAGE */}
         <div className="mt-10 justify-between gap-8 md:flex">
-          <motion.div
+          <div
             className="mt-10 basis-3/5 md:mt-0"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.5 }}
-            variants={{
-              hidden: { opacity: 0, y: 50 },
-              visible: { opacity: 1, y: 0 },
-            }}
           >
             <form
               target="_blank"
@@ -131,29 +118,27 @@ const ContactUs = ({ setSelectedPage }: Props) => {
                 SUBMIT
               </button>
             </form>
-          </motion.div>
+          </div>
 
-          <motion.div
+          <div
             className="relative mt-16 basis-2/5 md:mt-0"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            variants={{
-              hidden: { opacity: 0, y: 50 },
-              visible: { opacity: 1, y: 0 },
-            }}
+            
           >
-            <div className="w-full before:absolute before:-bottom-20 before:-right-10 before:z-[-1] md:before:content-evolvetext">
-              <img
-                className="w-full"
-                alt="contact-us-page-graphic"
-                src={ContactUsPageGraphic}
-              />
-            </div>
-          </motion.div>
+    
+        <div className="w-full before:absolute before:-bottom-[200px] before:-right-20 before:z-[1] md:before:content-evolvetext xs:before:content-evolvetext">
+        {isAboveMediumScreens && (
+          <img
+            className="w-full rounded-lg"
+            alt="personal-trainer-contact-form-graphic"
+            src={imageSrc}
+          />
+
+        )}
         </div>
-      </motion.div>
+
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

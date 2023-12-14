@@ -8,6 +8,7 @@ import AboutMe from "@/pages/AboutMe";
 import Benefits from "./pages/Benefits";
 import Classes from "./pages/Classes"
 import ContactMe from "./pages/ContactMe"
+import ScrollToTop from "./Components/sctollToTop";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home);
@@ -27,6 +28,7 @@ function App() {
 
   return (
     <BrowserRouter>
+     <ScrollToTop />
       <div className="app bg-gray-20">
         <Navbar
           isTopOfPage={isTopOfPage}
