@@ -1,17 +1,17 @@
-
+import React, { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from "@/scenes/navbar";
 import Home from "@/scenes/home";
-import OurClasses from "@/scenes/ourClasses";
-import Benefits from "@/scenes/benefits";
-import ContactUs from "@/scenes/contactUs";
 import Footer from "@/scenes/footer";
-import { useEffect, useState } from "react";
 import { SelectedPage } from "@/shared/types";
+import AboutMe from "@/pages/AboutMe";
+import Benefits from "./pages/Benefits";
+import Classes from "./pages/Classes"
+import ContactMe from "./pages/ContactMe"
+import ScrollToTop from "./Components/sctollToTop";
 
 function App() {
-  const [selectedPage, setSelectedPage] = useState<SelectedPage>(
-    SelectedPage.Home
-  );
+  const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home);
   const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
 
   useEffect(() => {
@@ -27,18 +27,37 @@ function App() {
   }, []);
 
   return (
-    <div className="app bg-gray-20">
-      <Navbar
-        isTopOfPage={isTopOfPage}
-        selectedPage={selectedPage}
-        setSelectedPage={setSelectedPage}
-      />
-       <Home setSelectedPage={setSelectedPage} />
-      <Benefits setSelectedPage={setSelectedPage} />
-      <OurClasses setSelectedPage={setSelectedPage} />
-       <ContactUs setSelectedPage={setSelectedPage} />
-      <Footer />   
-    </div>
+    <BrowserRouter>
+     <ScrollToTop />
+      <div className="app bg-gray-20">
+        <Navbar
+          isTopOfPage={isTopOfPage}
+          selectedPage={selectedPage}
+          setSelectedPage={setSelectedPage}
+        />
+        <div className="main-content">
+        {/* <Routes>
+        <Route path="/about-me" element={<AboutMe/>} />
+        </Routes>
+        <Home setSelectedPage={setSelectedPage} />
+        <Benefits setSelectedPage={setSelectedPage} />
+        <OurClasses setSelectedPage={setSelectedPage} />
+        <ContactUs setSelectedPage={setSelectedPage} /> */}
+        <Routes>
+        <Route path="/" element={<Home setSelectedPage={setSelectedPage} />} />
+        <Route path="/about-me" element={<AboutMe />} />
+        <Route path="/benefits" element={<Benefits />} />
+        <Route path="/classes" element={<Classes />} />
+        <Route path="/contactme" element={<ContactMe />} />
+
+        {/* Other routes as needed */}
+      </Routes>
+      </div>
+      <Footer/>
+      </div>
+      <div></div>
+              
+    </BrowserRouter>
   );
 }
 

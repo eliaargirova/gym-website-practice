@@ -16,3 +16,9 @@ export enum SelectedPage {
     description?: string;
     image: string;
   }
+
+  export interface IconComponentType {
+    icon: JSX.Element;
+    title: string;
+    description: string;
+  }
