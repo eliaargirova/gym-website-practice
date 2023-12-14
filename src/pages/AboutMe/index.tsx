@@ -1,6 +1,6 @@
 import useMediaQuery from "@/hooks/useMediaQuery";
 import AboutMePersonGraphic from "@/assets/aboutus-main-image.png";
-import AboutMeMain from "@/assets/about-me-main.jpg";
+import AboutMeMain from "@/assets/boxing-gym-main-about-me.jpg";
 import HText from "@/shared/HText";
 import SocialMediaIcons from "@/Components";
 import AboutMeIcons from "@/Components/icons";
