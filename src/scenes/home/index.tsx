@@ -12,6 +12,7 @@ import Benefits from "../benefits";
 import OurClasses from "../ourClasses";
 import ContactUs from "../contactUs";
 import ContactUsImage from "@/assets/image4.png";
+import Testimonials from "../testimonials/Testimonials";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -110,6 +111,10 @@ const Home = ({ setSelectedPage }: Props) => {
 
       <section id="ourclasses">
         <OurClasses setSelectedPage={setSelectedPage} />
+      </section> 
+
+      <section id="testimonials">
+        <Testimonials />
       </section> 
 
       <section id="contactus">
