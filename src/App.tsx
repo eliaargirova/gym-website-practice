@@ -9,10 +9,12 @@ import Benefits from "./pages/Benefits";
 import Classes from "./pages/Classes"
 import ContactMe from "./pages/ContactMe"
 import ScrollToTop from "./Components/sctollToTop";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home);
   const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
+  const isAboveMediumScreens = useMediaQuery("(min-width:1060px)");
 
   useEffect(() => {
     const handleScroll = () => {

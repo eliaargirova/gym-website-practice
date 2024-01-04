@@ -12,6 +12,7 @@ import Benefits from "../benefits";
 import OurClasses from "../ourClasses";
 import ContactUs from "../contactUs";
 import ContactUsImage from "@/assets/image4.png";
+import Testimonials from "../testimonials/Testimonials";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -50,7 +51,7 @@ const Home = ({ setSelectedPage }: Props) => {
               </div>
             </div>
 
-            <h2 className="mt-8 text-sm">
+            <h2 className="mt-8 md:text-md sm:text-md xs:text-md xxs:text-md">
               Unrivaled Gym. Unparalleled Training Fitness Classes. World Class
               Studios to get the Body Shapes That you Dream of.. Get Your Dream
               Body Now.
@@ -92,9 +93,9 @@ const Home = ({ setSelectedPage }: Props) => {
       </motion.div>
 
       {/* SPONSORS */}
-      {isAboveMediumScreens && (
+      {/* {isAboveMediumScreens && (
         <div className="h-[150px] w-full bg-primary-100 py-10">
-          <div className="mx-auto w-5/6">
+          <div className="mx-auto w-5/6 ">
             <div className="flex w-3/5 items-center justify-between gap-8">
               <img alt="redbull-sponsor" src={SponsorRedBull} />
               <img alt="forbes-sponsor" src={SponsorForbes} />
@@ -102,7 +103,7 @@ const Home = ({ setSelectedPage }: Props) => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
 
       <section id="benefits">
         <Benefits setSelectedPage={setSelectedPage} />
@@ -110,6 +111,10 @@ const Home = ({ setSelectedPage }: Props) => {
 
       <section id="ourclasses">
         <OurClasses setSelectedPage={setSelectedPage} />
+      </section> 
+
+      <section id="testimonials">
+        <Testimonials />
       </section> 
 
       <section id="contactus">
