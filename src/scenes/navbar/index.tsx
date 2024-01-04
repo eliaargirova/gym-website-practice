@@ -34,27 +34,27 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
             {/* RIGHT SIDE */}
             {isAboveMediumScreens ? (
               <div className={`${flexBetween} w-full`}>
-                <div className={`${flexBetween} gap-8 text-sm`}>
+                <div className={`${flexBetween} gap-8 text-md`}>
 
                   {/* HOME */}
 
-                  <button className="text-xl" onClick={() => navigate("/")}>Home</button>
+                  <button className="text-md" onClick={() => navigate("/")}>Home</button>
  
                   {/* BENEFITS */}
-                  <button className="text-xl" onClick={() => navigate("/benefits")}>Benefits</button>
+                  <button className="text-md" onClick={() => navigate("/benefits")}>Benefits</button>
 
                   {/* CLASSES */}
 
-                  <button className="text-xl" onClick={() => navigate("/classes")}>Classes</button>
+                  <button className="text-md" onClick={() => navigate("/classes")}>Classes</button>
 
                   {/* CONTACT US*/}
-                  <button className="text-xl"onClick={() => navigate("/contactme")}>Social Media</button>
+                  <button className="text-md"onClick={() => navigate("/contactme")}>Social Media</button>
                 </div>
 
                 {/* ABOUT ME */}
 
                 <div className={`${flexBetween} gap-8`}>
-                  <button className="text-xl" onClick={() => navigate("/about-me")}>About me</button>
+                  <button className="text-md" onClick={() => navigate("/about-me")}>About me</button>
 
                  {/* CONTACT ME */} 
                   <ActionButton setSelectedPage={setSelectedPage}>

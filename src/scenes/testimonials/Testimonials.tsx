@@ -6,7 +6,7 @@ const Testimonials = () => {
     <section id="testimonials" className="pt-32 pb-16">
       {/* HEADING */}
       <motion.div
-        className="md:w-1/3 text-center md:text-left"
+        className="md:w-1/3 text-center md:text-left md:pl-[120px] "
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
@@ -18,11 +18,6 @@ const Testimonials = () => {
       >
         <p className="font-montserrat font-bold text-4xl mb-5">
           TESTIMONIALS
-        </p>
-        <LineGradient width="mx-auto w-2/5" />
-        <p className="mt-10">
-          Here's What People are Saying About My Work. Aliquam aliquet integer
-          ut fames odio in at. At magna ornare dictum lectus.
         </p>
       </motion.div>
 

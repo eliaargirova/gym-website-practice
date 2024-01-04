@@ -28,6 +28,7 @@ const Classes = (props: Props) => {
 
       <div className="service-content">
         {selectedService === 'Boxing' && 
+        <div className="mb-[600px]">
         <div className="w-fi;; max-w-5xl p-5 pb-10 mx-auto mb-10 gap-5 columns-3 space-y-5">
           <img src={WomanLifting} alt="woman-at-gym-lifting-weigths" className="rounded-lg"/>
           <img src={WomanAtGymLifting} alt="woman-lifting-weigths" className="rounded-lg"/>
@@ -35,7 +36,27 @@ const Classes = (props: Props) => {
           <img src={HiitTraining} alt="hiit-training" className="rounded-lg"/>
           <img src={StrongWoman} alt="strong-woman" className="rounded-lg"/>
           <img src={MuscularFitnessModel} alt="muscular-fitness-model" className="rounded-lg"/>
-          </div>}
+          </div>
+
+          <div className="">
+          <h1 className="font-bold text-[50px] mb-10"> What does a typical class look like? </h1>
+
+          <div className="w-full bg-black h-[2px] my-8"></div>
+          <p>
+          Fringilla a sed at suspendisse ut enim volutpat. Rhoncus vel est
+              tellus quam porttitor. Mauris velit euismod elementum arcu neque
+              facilisi. Amet semper tortor facilisis metus nibh. Rhoncus sit
+              enim mattis odio in risus nunc.
+          </p>
+          </div>
+
+          
+          </div>
+          
+          
+          
+          
+          }
         {selectedService === 'Weight Lifting' && <div>Content for Weight Lifting</div>}
         {selectedService === 'Nutrition' && <div>Content for Nutrition</div>}
       </div>
